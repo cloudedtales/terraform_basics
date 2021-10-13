@@ -25,17 +25,9 @@
             "Resource": "*"
         },
         {
-            "Sid": "DenyAllExceptListedIfNoMFA",
+            "Sid": "DenyAllIfNoMFA",
             "Effect": "Deny",
-            "NotAction": [
-                "iam:CreateVirtualMFADevice",
-                "iam:EnableMFADevice",
-                "iam:GetUser",
-                "iam:ListMFADevices",
-                "iam:ListVirtualMFADevices",
-                "iam:ResyncMFADevice",
-                "sts:GetSessionToken"
-            ],
+            "Action": "*",
             "Resource": "*",
             "Condition": {
                 "BoolIfExists": {
